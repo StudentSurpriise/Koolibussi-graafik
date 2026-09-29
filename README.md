@@ -16,7 +16,7 @@ Koolibussi-graafiku projekti jaoks valiksin inkrementaalse mudeli, sest süsteem
 
 ## Makett
 Tegime iteratiivselt, sest soovisime kasutajaliidest samm-sammult testida ja tagasiside põhjal täiustada.
-![Ekraan 1](protsess/Screenshot 2026-09-29 090448.png)
+![Ekraan 1](protsess/Screenshot.png)
 
 ## Kuidas me töötasime
 Tahvel alguses ja lõpus: `protsess/`. 
