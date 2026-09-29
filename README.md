@@ -21,3 +21,55 @@ Tegime iteratiivselt, sest soovisime kasutajaliidest samm-sammult testida ja tag
 ## Kuidas me töötasime
 Tahvel alguses ja lõpus: `protsess/`. 
 Retrospektiiv: Projekti algus sujus hästi tänu selgele tööjaotusele ja heale tiimitööle. Raskusi valmistas reaalajas andmete sünkroniseerimise loogika ja seoste paika panemine klassidiagrammil. Järgmine kord kaasaksime kasutajaid testimisse veelgi varem.
+
+## Diagrammid
+```mermaid
+classDiagram
+  class Route {
+    -int distance
+    -int time
+    +getMenu(date)
+    +getRouteDetails()
+    +calculateTotalTime()
+  }
+
+  class Driver {
+    +String name
+    -int id
+    -String phone
+    -String licenseCategory
+    +findAllergy()
+    +getDetails()
+    +updateLocation()
+    +reportDelay(minutes)
+  }
+
+  class Buss {
+    -String mark
+    -int tankCapacity
+    -float fuelInMoment
+    -float averageConsumption
+    -String color
+    -String regNumber
+    -int seatsCount
+    +toString()
+    +checkRoute()
+    +refuel(amount)
+    +isAvailableForRoute()
+  }
+
+  class Student {
+    -String name
+    -String IK
+    -String group
+    -int age
+    -String address
+    -String parentPhone
+    +toString()
+    +getAssignedBus()
+    +updateAttendance(status)
+  }
+
+  Route "1" --> "*" Buss : teenindab
+  Driver "*" --> "*" Buss : juhib
+  Buss "1" --> "*" Student : veab
