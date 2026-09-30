@@ -69,7 +69,9 @@ classDiagram
     +getAssignedBus()
     +updateAttendance(status)
   }
-
   Route "1" --> "*" Buss : teenindab
   Driver "*" --> "*" Buss : juhib
   Buss "1" --> "*" Student : veab
+
+## Tools
+![Tools](protsess/tools/comprasion.png)
