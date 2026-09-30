@@ -22,6 +22,9 @@ Tegime iteratiivselt, sest soovisime kasutajaliidest samm-sammult testida ja tag
 Tahvel alguses ja lõpus: `protsess/`. 
 Retrospektiiv: Projekti algus sujus hästi tänu selgele tööjaotusele ja heale tiimitööle. Raskusi valmistas reaalajas andmete sünkroniseerimise loogika ja seoste paika panemine klassidiagrammil. Järgmine kord kaasaksime kasutajaid testimisse veelgi varem.
 
+## Tools
+![Vahendite võrdlus](protsess/tools/comprasion.png)
+
 ## Diagrammid
 ```mermaid
 classDiagram
@@ -72,6 +75,3 @@ classDiagram
   Route "1" --> "*" Buss : teenindab
   Driver "*" --> "*" Buss : juhib
   Buss "1" --> "*" Student : veab
-
-## Tools
-![Tools](protsess/tools/comprasion.png)
