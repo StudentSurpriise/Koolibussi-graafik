@@ -14,6 +14,54 @@ Koolibussi-graafiku projekti jaoks valiksin inkrementaalse mudeli, sest süsteem
 ![Kasutusjuhud](diagrams/UML.drawio.png)
 ![Klassid](diagrams/class.drawio.png)
 
+## Projekti tüübid
+## 📋 Projekti tüübid
+
+- **Uus süsteem (New System):** Toote algne loomine nullist (MVP või täislahendus)[cite: 1].
+- **Üleviimine (Migration / Replacement):** Vana aegunud tehnoloogia, aegunud raamkestade või toeta jäänud tarkvara asendamine uuega[cite: 1].
+- **Liidestamine (Integration):** Välise teenuse, API või makselahenduse ühendamine olemasolevasse süsteemi[cite: 1].
+- **Olemasoleva arendus (Enhancement / Maintenance):** Uute funktsioonide lisamine ja äriloogika laiendamine töötavasse süsteemi[cite: 1].
+
+---
+
+## 🚀 Kaheaastase tööjärgse arenduse stsenaariumid
+
+### (a) Uus funktsioon: Hääl-/visuaalne assistendi tugi (Häälassistent)
+- **Tüüp:** olemasoleva süsteemi arendus
+- **Mis muutub:** `ParentNotificationController`, `NotificationService`, ekraan `BusStatusScreen` (lisandub otsetee nupp).
+- **Mis jääb samaks:** GPS-i jälgimise põhimoodul, `BusTrackerService` ja andmebaasi baasstruktuur (bussid, marsruudid).
+- **Peamine risk:** Uus teavituste loogika võib tekitada duplikaat-push-teateid vanematele, kui taustateenuste sünkroniseerimine tõrgub.
+- **Esimene samm:** Kirjutada olemasolevale koodile automaattestid (unit tests) praeguse teavituste süsteemi katmiseks, et uus funktsioon ei rikuks olemasolevat tööd.
+
+> **Klassidiagrammi muudatused:**
+> * *Muutuvad klassid:* `NotificationService` (lisandub uus meetod häälassistendi päringute töötlemiseks) ja `BusStatusScreen` (UI kiht).
+> * *Uus klass:* `VoiceAssistantAdapter` (haldab ühendust väliste hääljuhtimise API-dega).
+
+---
+
+### (b) Platvorm vananes: Üleminek uuele tehnoloogiale
+- **Tüüp:** üleviimine
+- **Mis muutub:** Kogu backend-arhitektuur (PHP 5 / vana server -> Node.js + PostgreSQL) ja serveri keskkond.
+- **Mis jääb samaks:** Välised API-d, mobiilirakenduse kasutajaliides (UI disain) ja äriloogika kontseptsioon.
+- **Peamine risk:** Andmete üleviimisel (migratsioonil) võivad ajaloolised sõiduandmed või kasutajate paroolide rävid vigaselt teisenduda, põhjustades sisselogimistõrkeid.
+- **Esimene samm:** Teha andmebaasist täielik külm koopia (backup) ja luua testkeskkond, kus saab migratsiooniskuupripte mitu korda läbi testida.
+
+> **Migratsiooni strateegia (Tükkhaaval):**
+> Süsteem viiakse üle faasidena, kuna 500 aktiivse kasutajaga süsteem ei saa lubada pikka täielikku katkestust. 
+> * *Esimesena liiguvad:* Andmebaas ja autentimisteenus (tabelid: `Users`, `Roles`, `AuthTokens`), sest ilma kasutajaandmete ja turvalise sisselogimiseta ei saa ühtegi teist moodulit käivitada. 
+> * *Järgmisena:* `Buses`, `Routes`, `Stops` ja viimasena reaalajas `GPS_Logs` ajalugu.
+
+---
+
+### (c) Vaja on liidestada: Kooli infosüsteem (õpilaste nimekiri)
+- **Tüüp:** liidestamine
+- **Mis muutub:** `StudentSyncService`, andmebaasi skeem (lisandub seos bussi ja kooli andmebaasi vahel), `AdminPanel` ekraanid (kooli nimekirja sünkroniseerimise nupp).
+- **Mis jääb samaks:** Bussi GPS-jälgimise reaalajas kaart ja juhtide liides.
+- **Peamine risk:** Kooli infosüsteemi väline API võib ootamatult muutuda või maas olla, mistõttu õpilaste nimekirjad ei uuene enne uut sõitu.
+- **Esimene samm:** Tutvuda kooli infosüsteemi API dokumentatsiooniga ja testida Postmanis manuaalselt päringute tegemist.
+- **Saadame:** Kooli API-le päringu (OAuth2 token + `school_id` + `route_id`).
+- **Saame vastu:** JSON-vastuse õpilaste nimekirjaga (`student_id`, `name`, `class`, `assigned_stop_id`).
+
 ## Makett
 Tegime iteratiivselt, sest soovisime kasutajaliidest samm-sammult testida ja tagasiside põhjal täiustada.
 ![Ekraan 1](mockup/Screenshot.png)
