@@ -13,6 +13,22 @@ Koolibussi-graafiku projekti jaoks valiksin inkrementaalse mudeli, sest süsteem
 ## Diagrammid
 ![Kasutusjuhud](diagrams/UML.drawio.png)
 ![Klassid](diagrams/class.drawio.png)
+sequenceDiagram
+    autonumber
+    actor Kasutaja
+    participant MeieSüsteem as Teie süsteem (Koolibuss)
+    participant VanaSüsteem as Võõras süsteem (Kooli infosüsteem)
+
+    Kasutaja->>MeieSüsteem: Avab lehe ja vajutab "Sünkroniseeri õpilased"
+    MeieSüsteem->>VanaSüsteem: API päring (OAuth2 token, school_id=12, route_id=5)
+    
+    alt Võõras süsteem vastab edukalt
+        VanaSüsteem-->>MeieSüsteem: JSON (student_id, name, class, assigned_stop_id)
+        MeieSüsteem-->>Kasutaja: Kuvab õpilaste nimekirja ja eduka sünkroniseerimise teate
+    else Võõras süsteem ei vasta 10 sekundi jooksul VÕI vastab veaga (timeout / 500 Error)
+        VanaSüsteem--xMeieSüsteem: Aegumine / Viga
+        MeieSüsteem-->>Kasutaja: "Kooli infosüsteem ei vasta. Proovi hiljem uuesti või kasuta vahemälu."
+    end
 
 ## Projekti tüübid
 ## 📋 Projekti tüübid
