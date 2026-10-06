@@ -13,7 +13,7 @@ Koolibussi-graafiku projekti jaoks valiksin inkrementaalse mudeli, sest süsteem
 ## Diagrammid
 ![Kasutusjuhud](diagrams/UML.drawio.png)
 ![Klassid](diagrams/class.drawio.png)
-![Juhtimid](diagrams/juhtimid.png)
+![Juhtimid](diagrams/liidestus.png)
 
 ## Projekti tüübid
 ## 📋 Projekti tüübid
