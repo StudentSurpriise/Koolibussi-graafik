@@ -108,6 +108,10 @@ GPS-põhine bussi reaalajas jälgimine kaardil.
 |---|---|---|---|
 | Graafiku ja hilinemiste andmete sünkroniseerimine ei tööta korrektselt |2 |3 |Lepime andmete struktuuri ja uuendamise loogika varakult kokku ning testime seda eraldi |
 | Põhifunktsioonide arendus ei valmi tähtajaks |2 |3 |Seame prioriteediks „must“ nõuded ja jätame vähem olulised funktsioonid lõppu |
+
 | Kasutajaliides ei ole õpilastele või juhtidele piisavalt arusaadav |2 |2 |Testime maketti ja prototüüpi varakult vähemalt mõne võimaliku kasutajaga ning parandame probleemsed kohad enne lõplikku versiooni |
 
 **Edukriteerium:** Tellija kontrollib lõpus, kas õpilane/lapsevanem saab süsteemis vaadata õige bussiliini väljumisaega ja peatusi ning kas bussijuht/dispetšer saab süsteemis hilinemise märkida. Kui mõlemad tegevused töötavad ilma arendaja abita, on projekt edukalt lõpetatud — jah.
+**Hinnang:** 76 h, 9,5 päeva kahekesi.
+## WBS
+![WBS](protsess/WBS.png)
