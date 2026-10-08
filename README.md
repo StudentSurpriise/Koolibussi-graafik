@@ -75,13 +75,14 @@ classDiagram
   Route "1" --> "*" Buss : teenindab
   Driver "*" --> "*" Buss : juhib
   Buss "1" --> "*" Student : veab
+```
 
- 	## Projekti kaart
+ ## Projekti kaart
 
-  **Tellija:** Kooli juhtkond / koolibussiteenuse korraldaja, kes vastutab õpilaste transpordi ja bussiliinide toimimise eest.
-  **Probleem:** Praegu on õpilastel ja lapsevanematel keeruline saada kiiresti ja kindlalt infot koolibussi väljumiste, peatuste ning hilinemiste kohta. Bussijuht või dispetšer peab muudatusi ja hilinemisi edastama käsitsi, mistõttu võib info jõuda kasutajateni hilinemisega või üldse mitte.
-  **Eesmärk:** 1. detsembriks 2026 saavad õpilased ja lapsevanemad veebis vaadata bussiliinide väljumisaegu ja peatusi ning bussijuhid/dispetšerid saavad hilinemisi süsteemis märkida. Vähemalt 90% testkasutajatest leiab soovitud bussiliini ja selle väljumisaja kuni 1 minuti jooksul.
-  **Tulemus:**
+**Tellija:** Kooli juhtkond / koolibussiteenuse korraldaja, kes vastutab õpilaste transpordi ja bussiliinide toimimise eest.
+**Probleem:** Praegu on õpilastel ja lapsevanematel keeruline saada kiiresti ja kindlalt infot koolibussi väljumiste, peatuste ning hilinemiste kohta. Bussijuht või dispetšer peab muudatusi ja hilinemisi edastama käsitsi, mistõttu võib info jõuda kasutajateni hilinemisega või üldse mitte.
+**Eesmärk:** 1. detsembriks 2026 saavad õpilased ja lapsevanemad veebis vaadata bussiliinide väljumisaegu ja peatusi ning bussijuhid/dispetšerid saavad hilinemisi süsteemis märkida. Vähemalt 90% testkasutajatest leiab soovitud bussiliini ja selle väljumisaja kuni 1 minuti jooksul.
+**Tulemus:**
 töötav koolibussi graafiku süsteem;
 õpilase/lapsevanema vaade väljumiste ja peatuste vaatamiseks;
 bussijuhi/dispetšeri vaade hilinemiste märkimiseks;
