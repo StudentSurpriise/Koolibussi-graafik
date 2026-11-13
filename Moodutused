@@ -1,0 +1,19 @@
+Mis kool soovib "Koolibussi-graafik"-us  muuta.
+1. Õpilased peaksid saama broneerida bussiiste mobiiltelefonist. 
+2. Õpilased peaksid nägema marsruudil asuvad kohad, kus tekivad liiklusummikud. 
+3. Töötajal peaks olema võimalik valida marsruut, millel ta töötab. 
+4. Süsteem peaks saatma õpilasele teavituse, kui tema broneering/muudatused on kinnitatud. 
+
+Küsimused:
+1. Millised on selle projekti peamised nõuded? 
+2. Millised neist on funktsionaalsed ja millised mittefunktsionaalsed? 
+3. Milliseid kasutajaid ehk rolle on süsteemis? 
+4. Millist arendusmudelit kasutaksite ja miks? 
+5. Milliseid olemasoleva süsteemi osi tuleks muuta või täiendada? 
+
+Vastused:
+1. Muuta kasutaja/töötaja võimalused paindlikumaks.
+2. Kõik nõuded on funktsionaalsed.
+3. Süsteemis on kaks rolli: õpilane ja autojuht.
+4. Koolibussi-graafiku projekti jaoks valiksinkrementaalse mudeli, sest süsteemi saab arendada väikeste osadena. Esmalt põhilise bussigraafiku saab lisada näiteks peatuste, õpilaste ja busside haldamise. Iga valminud osa saab eraldi testida ja vajadusel parandada. Kosemudel ei oleks sama sobiv, sest seal on viimase muudatuste tegemise keerulisem. Inkrementaalne mudel on võimalik projekteerida, arvestades paindlikult uusi vajadusi võtta.
+5. Funktsioone, klasse ja andmebaasi tuleks muuta.
