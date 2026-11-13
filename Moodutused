@@ -1,19 +1,52 @@
-Mis kool soovib "Koolibussi-graafik"-us  muuta.
-1. Õpilased peaksid saama broneerida bussiiste mobiiltelefonist. 
-2. Õpilased peaksid nägema marsruudil asuvad kohad, kus tekivad liiklusummikud. 
-3. Töötajal peaks olema võimalik valida marsruut, millel ta töötab. 
-4. Süsteem peaks saatma õpilasele teavituse, kui tema broneering/muudatused on kinnitatud. 
+# 🚌 Koolibussi-graafik — Süsteemi analüüs ja täiendused
 
-Küsimused:
-1. Millised on selle projekti peamised nõuded? 
-2. Millised neist on funktsionaalsed ja millised mittefunktsionaalsed? 
-3. Milliseid kasutajaid ehk rolle on süsteemis? 
-4. Millist arendusmudelit kasutaksite ja miks? 
-5. Milliseid olemasoleva süsteemi osi tuleks muuta või täiendada? 
+![Status](https://img.shields.io/badge/Staatus-Planeerimisel-blue)
+![Model](https://img.shields.io/badge/Arendusmudel-Inkrementaalne-green)
+![Language](https://img.shields.io/badge/Keel-Eesti-lightgrey)
 
-Vastused:
-1. Muuta kasutaja/töötaja võimalused paindlikumaks.
-2. Kõik nõuded on funktsionaalsed.
-3. Süsteemis on kaks rolli: õpilane ja autojuht.
-4. Koolibussi-graafiku projekti jaoks valiksinkrementaalse mudeli, sest süsteemi saab arendada väikeste osadena. Esmalt põhilise bussigraafiku saab lisada näiteks peatuste, õpilaste ja busside haldamise. Iga valminud osa saab eraldi testida ja vajadusel parandada. Kosemudel ei oleks sama sobiv, sest seal on viimase muudatuste tegemise keerulisem. Inkrementaalne mudel on võimalik projekteerida, arvestades paindlikult uusi vajadusi võtta.
-5. Funktsioone, klasse ja andmebaasi tuleks muuta.
+## 📋 Projekti eesmärk ja soovitud muudatused
+
+Kool soovib täiendada olemasolevat **„Koolibussi-graafiku“** süsteemi, et muuta see kasutajasõbralikumaks ja reaalajas paremini jälgitavaks. Planeeritavad uuendused:
+
+1. 📱 **Mobiilne broneerimine:** Õpilased peaksid saama broneerida bussiistme otse mobiiltelefonist.
+2. 🚦 **Liiklusinfo kuvamine:** Õpilased peaksid nägema marsruudil asuvaid kohti, kus tekivad liiklusummikud.
+3. 🗺️ **Marsruudi valik:** Töötajal peaks olema võimalik valida marsruut, millel ta töötab.
+4. 🔔 **Automaatsed teavitused:** Süsteem peaks saatma õpilasele teavituse, kui tema broneering või muudatused on kinnitatud.
+
+---
+
+## ❓ Analüüsi küsimused ja vastused
+
+### 1. Millised on selle projekti peamised nõuded?
+* Peamine eesmärk on muuta nii kasutaja (õpilase) kui ka töötaja võimalused süsteemis paindlikumaks, mugavamaks ja paremini hallatavaks.
+
+---
+
+### 2. Millised neist on funktsionaalsed ja millised mittefunktsionaalsed?
+* **Funktsionaalsed nõuded:** Kõik neli esitatud nõuet (istme broneerimine, ummikute kuvamine, marsruudi valimine ja teavituste saatmine) on funktsionaalsed, kuna need kirjeldavad konkreetseid tegevusi ja funktsioone, mida süsteem peab tegema.
+* **Mittefunktsionaalsed nõuded:** Selles loetelus eraldi välja toodud ei ole *(kaudselt viitab mobiiltelefonist broneerimine mobiilisõbralikkusele/kasutatavusele)*.
+
+---
+
+### 3. Milliseid kasutajaid ehk rolle on süsteemis?
+Süsteemis on kaks peamist kasutajarolli:
+* 🎓 **Õpilane** – broneerib bussiistmeid, jälgib marsruuti ning ummikuid ja saab teavitusi.
+* 🧑‍✈️ **Autojuht (töötaja)** – valib ja haldab marsruuti, millel ta töötab.
+
+---
+
+### 4. Millist arendusmudelit kasutaksite ja miks?
+> **Valitud mudel:** **Inkrementaalne arendusmudel**
+
+**Põhjendus:**
+* **Arendus väikeste osadena:** Süsteemi saab luua ja täiendada etappide kaupa. Esmalt saab valmis teha põhilise bussigraafiku ning seejärel lisada järk-järgult peatuste, õpilaste, busside ja broneeringute haldamise.
+* **Eraldi testimine:** Iga valminud osa (inkrementi) saab eraldi testida ja vajadusel kohe parandada enne järgmise etapi juurde liikumist.
+* **Paindlikkus vs. kosemudel:** Kosemudel ei oleks siin nii sobiv, sest hilisemate muudatuste tegemine on selles keeruline ja kulukas. Inkrementaalne mudel võimaldab projekteerida süsteemi nii, et uusi vajadusi saab paindlikult jooksvalt arvesse võtta.
+
+---
+
+### 5. Milliseid olemasoleva süsteemi osi tuleks muuta või täiendada?
+Uuenduste elluviimiseks tuleb muuta ja täiendada järgmisi süsteemi kihte:
+* ⚙️ **Funktsioonid (äriloogika):** Broneerimise, teavituste saatmise ja marsruudi valiku loogika lisamine.
+* 🧩 **Klassid (andmemudelid):** Olemasolevate klasside täiendamine ning uute loomine (nt broneeringud, teavitused, liiklusinfo).
+* 🗄️ **Andmebaas:** Uute tabelite ja väljade lisamine (nt istmete saadavus, broneeringute staatused, marsruutide seosed töötajatega).
